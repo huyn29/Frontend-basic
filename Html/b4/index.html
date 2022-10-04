@@ -7,7 +7,7 @@
 </head>
 <body>
 	<form>
-		<table border="1" width="50%">
+		<table border="1" width="50%" bgcolor="blue">
 			<tr>
 				<td colspan="2" align="center">
 					ĐĂNG KÍ
@@ -44,7 +44,7 @@
 					Giới tính
 				</td>
 				<td>
-					<input type="radio" name="gioi_tinh"> Nam
+					<input type="radio" name="gioi_tinh" checked> Nam
 					<input type="radio" name="gioi_tinh"> Nữ
 				</td>
 			</tr>
@@ -64,7 +64,7 @@
 					<select>
 						<option> cấp 1</option>
 						<option> cấp 2</option>
-						<option> cấp 3</option>
+						<option selected> cấp 3</option>
 					</select>
 				</td>
 			</tr>
@@ -73,12 +73,14 @@
 		<textarea></textarea>
 		<br>
 		Anh dai dien
-		<input type="file" name="">
+		<input type="file" name="" accept="image/*">
 		<br>
 		<br>
 		<br>
-		<input type="submit">
-		<input type="reset" name="">
+		<!-- <input type="submit">
+		<input type="reset" name=""> -->
+		<button type="submit">dang ki</button>
+		<button type="reset">nhap lai</button>
 	</form>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            #div_tong{
+                width: 100%;
+                height: 700px;
+                background: pink;
+            }
+            /* div tren */
+            #div_tren{
+                width: 100%;
+                height: 20%;
+                background: red;
+            }
+            #div_tren > .trai{
+                width: 50%;
+                height: 100%;
+                background: yellow;
+                float: left;
+            }
+            #div_tren > .phai{
+                width: 50%;
+                height: 100%;
+                background: green;
+                float: right;
+            }
+            /*div duoi*/
+            #div_duoi{
+                width: 100%;
+                height: 80%;
+                background: blue;
+            }
+            #div_duoi > .trai{
+                width: 30%;
+                height: 100%;
+                background: brown;
+                float: left;
+            }
+            #div_duoi > .giua{
+                width: 40%;
+                height: 100%;
+                background: red;
+                float: left;
+            }
+            #div_duoi > .phai{
+                width: 29%;
+                height: 100%;
+                background: yellow;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div_tong">
+            <div id="div_tren">
+                <div class="trai" style="position: relative;">
+                    <img src="images/logo.gif" style="position: absolute;bottom: -10px; z-index: 99;">
+                </div>
+                <div class="phai"></div>
+            </div>
+            <div id="div_duoi">
+                <div class="trai" style="position: relative;">
+                    <img src="images/Hoavang.gif" style="position: absolute;bottom: 0px;right: -10px;width: 100%;">
+                </div>
+                <div class="giua"></div>
+                <div class="phai"></div>
+            </div>
+        </div>
+    </body>
+</html>
