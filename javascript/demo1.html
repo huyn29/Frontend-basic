@@ -7,43 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        Nhap thang
-        <input type="number" id="thang">
-        <br>
-        <button type="button" onclick="in_ra()">hay bam nut</button>
-    </form>
-    <div id="ketqua"></div>
+    Nhập tên của bạn
+    <br>
+    <input type="text" id="input_name">
+    <button onclick="in_ra()">Kiem tra</button>
+    <br>
     <script type="text/javascript">
         function in_ra(){
-            let thang = parseInt(document.getElementById('thang').value);
-            let ngay;
-            switch(thang){
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    ngay = 31;
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    ngay = 30;
-                    break;
-                case 2:
-                    ngay = 28;
-                    break;
-                default:
-                    ngay = 'sai';
-                    break;
-            }
-            document.getElementById('ketqua').innerHTML = 'so ngay: ' + ngay;
+            let name = document.getElementById('input_name').value;
+            document.write('hello' + name);
         }
     </script>
-
 </body>
 </html>

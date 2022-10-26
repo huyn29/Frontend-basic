@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Nhap so 
+        <input type="number" id="input">
+        <button type="button" onclick="nhap()">nhap</button>
+        <button type="button" onclick="xuat()">xuat</button>
+        <br>
+        <br>
+        Nhap so phan tu
+        <input type="number" id="input1">
+        <button type="button" onclick="random()">radom</button>
+        <br>
+        <br>
+        Nhap so phan tu
+        <input type="number" id="input2">
+        <button type="button" onclick="soNguyenTo()">so nt</button>
+    </form>
+    <div id="ketqua"></div>
+    <script type="text/javascript">
+        let mang = [];
+        function nhap(){
+            let so = parseInt(document.getElementById('input').value);
+            mang.push(so);
+            document.getElementById('input').value = '';
+        }
+        function xuat(){
+            document.getElementById('ketqua').innerHTML = mang;
+        }
+        function random(){
+            let so1 = parseInt(document.getElementById('input1').value);
+            let mang1 = [];
+            let so_ngau_nhien;
+            for(let i = 0; i < so1; i++){
+                so_ngau_nhien = Math.floor(Math.random() * 10);
+                mang1.push(so_ngau_nhien);
+            }
+            let max = mang1[0];
+            for(let i = 0; i<mang1.length;i++){
+                if(max<mang1[i]){
+                    max = mang1[i];
+                }
+            }
+            document.getElementById('ketqua').innerHTML = mang1;   
+        }
+        function soNguyenTo(){
+            let count = 0;
+            let kq;
+            let snt = parseInt(document.getElementById('input2').value);
+            for (let i = 1; i <= snt; i++) {
+                if(snt % i == 0){
+                    count++;
+                }
+            }
+            if(count == 2){
+                kq = "so nguyen to";
+            }
+            else{
+                kq = "khum phai";
+            }
+            document.getElementById('ketqua').innerHTML = kq;
+        }
+    </script>
+</body>
+</html>

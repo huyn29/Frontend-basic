@@ -3,70 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form action="">
-        Nhap so 
-        <input type="number" id="input">
-        <button type="button" onclick="nhap()">nhap</button>
-        <button type="button" onclick="xuat()">xuat</button>
+    <form>
+        Nhap thang
+        <input type="number" id="thang">
         <br>
-        <br>
-        Nhap so phan tu
-        <input type="number" id="input1">
-        <button type="button" onclick="random()">radom</button>
-        <br>
-        <br>
-        Nhap so phan tu
-        <input type="number" id="input2">
-        <button type="button" onclick="soNguyenTo()">so nt</button>
+        <button type="button" onclick="in_ra()">hay bam nut</button>
     </form>
     <div id="ketqua"></div>
     <script type="text/javascript">
-        let mang = [];
-        function nhap(){
-            let so = parseInt(document.getElementById('input').value);
-            mang.push(so);
-            document.getElementById('input').value = '';
-        }
-        function xuat(){
-            document.getElementById('ketqua').innerHTML = mang;
-        }
-        function random(){
-            let so1 = parseInt(document.getElementById('input1').value);
-            let mang1 = [];
-            let so_ngau_nhien;
-            for(let i = 0; i < so1; i++){
-                so_ngau_nhien = Math.floor(Math.random() * 10);
-                mang1.push(so_ngau_nhien);
+        function in_ra(){
+            let thang = parseInt(document.getElementById('thang').value);
+            let ngay;
+            switch(thang){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    ngay = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    ngay = 30;
+                    break;
+                case 2:
+                    ngay = 28;
+                    break;
+                default:
+                    ngay = 'sai';
+                    break;
             }
-            let max = mang1[0];
-            for(let i = 0; i<mang1.length;i++){
-                if(max<mang1[i]){
-                    max = mang1[i];
-                }
-            }
-            document.getElementById('ketqua').innerHTML = mang1;   
-        }
-        function soNguyenTo(){
-            let count = 0;
-            let kq;
-            let snt = parseInt(document.getElementById('input2').value);
-            for (let i = 1; i <= snt; i++) {
-                if(snt % i == 0){
-                    count++;
-                }
-            }
-            if(count == 2){
-                kq = "so nguyen to";
-            }
-            else{
-                kq = "khum phai";
-            }
-            document.getElementById('ketqua').innerHTML = kq;
+            document.getElementById('ketqua').innerHTML = 'so ngay: ' + ngay;
         }
     </script>
+
 </body>
 </html>

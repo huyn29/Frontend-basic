@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Họ tên
+        <input type="text" id="name">
+        <span id="loi_name"></span>
+        <br>
+        Ngày sinh
+        <input type="date" id="date">
+        <span id="loi_date"></span>
+        <br>
+        Giới tính
+        <input type="radio" name="gioi_tinh"> Nam
+        <input type="radio" name="gioi_tinh"> Nữ
+        <br>
+        Mật khẩu
+        <input type="password" id="mk">
+        <br>
+        <button type="submit" onclick="return check()"> Sign in</button>
+    </form>
+
+    <script type="text/javascript">
+        function check(){
+            let kiem_tra = true;
+            let ten = document.getElementById('name').value;
+            console.log(ten);
+            if(ten.length == 0){
+                document.getElementById('loi_name').innerHTML = 'Tên không được để trống';
+                kiem_tra = false;
+            }
+            let ngay_sinh = document.getElementById('date').value;
+            if(ngay_sinh.length == 0){
+                document.getElementById('loi_date').innerHTML = 'Ngày sinh không được để trống';
+                kiem_tra = false;
+            }
+            return kiem_tra;
+        }
+    </script>
+</body>
+</html>
