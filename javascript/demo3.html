@@ -39,7 +39,11 @@
             let mang1 = [];
             let so_ngau_nhien;
             for(let i = 0; i < so1; i++){
-                so_ngau_nhien = Math.floor(Math.random() * 10);
+                do {
+                    so_ngau_nhien = Math.floor(Math.random() * 10);
+                    if(!mang1.includes(so_ngau_nhien))
+                    break
+                } while (true);
                 mang1.push(so_ngau_nhien);
             }
             let max = mang1[0];

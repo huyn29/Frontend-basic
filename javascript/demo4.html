@@ -5,23 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        .loi{
+            color: red;
+            font-size: 10px;
+        }
+    </style>
 </head>
 <body>
     <form action="">
         Họ tên
         <input type="text" id="name">
-        <span id="loi_name"></span>
+        <span id="loi_name" class="loi"></span>
         <br>
         Ngày sinh
         <input type="date" id="date">
-        <span id="loi_date"></span>
+        <span id="loi_date" class="loi"></span>
         <br>
         Giới tính
         <input type="radio" name="gioi_tinh"> Nam
         <input type="radio" name="gioi_tinh"> Nữ
+        <span id="loi_gioiTinh" class="loi"></span>
         <br>
         Mật khẩu
         <input type="password" id="mk">
+        <span id="matkhau"></span>
         <br>
         <button type="submit" onclick="return check()"> Sign in</button>
     </form>
@@ -35,10 +43,39 @@
                 document.getElementById('loi_name').innerHTML = 'Tên không được để trống';
                 kiem_tra = false;
             }
+            else{
+                let regex_ten = /^([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴÝỶỸ][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽếềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]{1,6}\s?)+$/;
+                if(!regex_ten.test(ten)){
+                // == faulse
+                    document.getElementById('loi_name').innerHTML = 'Tên không hợp lệ';
+                }
+                else{
+                document.getElementById('loi_name').innerHTML = '';
+                }
+                kiem_tra = false;
+            }
+            
             let ngay_sinh = document.getElementById('date').value;
             if(ngay_sinh.length == 0){
                 document.getElementById('loi_date').innerHTML = 'Ngày sinh không được để trống';
                 kiem_tra = false;
+            }
+            else{
+                document.getElementById('loi_date').innerHTML = '';
+            }
+            let gioi_tinh = document.getElementsByName('gioi_tinh')
+            let kiem_tra_gt = false;
+            for(let i = 0; i< gioi_tinh.length;i++){
+                if(gioi_tinh[i].checked){
+                    kiem_tra_gt = true;
+                }
+            }
+            if(kiem_tra_gt == false){
+                document.getElementById('loi_gioiTinh').innerHTML = 'Bạn phải chọn giới tính';
+                kiem_tra = false;
+            }
+            else{
+                document.getElementById('loi_gioiTinh').innerHTML = '';
             }
             return kiem_tra;
         }
